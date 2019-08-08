@@ -29,12 +29,15 @@
               <li><a routerLink="/reports/fix">Zgłoś naprawę</a></li>
             </ul>
           </td>
+          <td>
+            <a onclick="localStorage.removeItem('token')" routerLink="/login">Wyloguj</a>
+          </td>
         </tr>
       </table>
     </div>
   </div>
 
-  <div class="navbar-for-non-auth-user"  *ngIf="!checkToken()">
+  <div class="navbar-for-non-auth-user" *ngIf="!checkToken()">
     <div class="top-navbar-btn-group non-auth-top-navbar">
       <table>
         <tr>
