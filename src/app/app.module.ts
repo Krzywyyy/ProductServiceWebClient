@@ -14,6 +14,11 @@ import { AddProductComponent } from './product/add-product/add-product.component
 import { EfficientProductsComponent } from './product/efficient-products/efficient-products.component';
 import { BrokenProductsComponent } from './product/broken-products/broken-products.component';
 import { DeleteProductComponent } from './product/delete-product/delete-product.component';
+import { DamageComponent } from './damage/damage.component';
+import { SolvedDamagesComponent } from './damage/solved-damages/solved-damages.component';
+import { UnsolvedDamagesComponent } from './damage/unsolved-damages/unsolved-damages.component';
+import { ReportDamageComponent } from './damage/report-damage/report-damage.component';
+import { ReportFixComponent } from './damage/report-fix/report-fix.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +30,12 @@ import { DeleteProductComponent } from './product/delete-product/delete-product.
     AddProductComponent,
     EfficientProductsComponent,
     BrokenProductsComponent,
-    DeleteProductComponent
+    DeleteProductComponent,
+    DamageComponent,
+    SolvedDamagesComponent,
+    UnsolvedDamagesComponent,
+    ReportDamageComponent,
+    ReportFixComponent
   ],
   imports: [
     BrowserModule,
