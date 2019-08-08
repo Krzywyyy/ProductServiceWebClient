@@ -1,0 +1,11 @@
+<body>
+    <h2>Lista wszystkich sprawnych sprzętów:</h2>
+    <li class="single-product" *ngFor="let product of products | async">
+        <b class="product-name">{{product.name}}</b>
+        <p>{{product.comment}} </p>
+        <p><b>Parametry:</b></p>
+        <p *ngFor="let parameter of product.parameters">
+            {{parameter.name}}: {{parameter.value}}
+        </p>
+    </li>
+</body>

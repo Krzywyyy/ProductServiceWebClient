@@ -1,0 +1,13 @@
+<body>
+    <h2>Usuń wybrany sprzęt:</h2>
+    <form id="delete-product-form" (ngSubmit)="delete()" #deleteProductForm="ngForm">
+        <div class="form-group">
+            <select class="form-control" [(ngModel)]="product.id" [ngModelOptions]="{standalone: true}" required>
+                <option *ngFor="let product of products | async" [value]="product.id">
+                    {{product.name}}
+                </option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Usuń</button>
+    </form>
+</body>
