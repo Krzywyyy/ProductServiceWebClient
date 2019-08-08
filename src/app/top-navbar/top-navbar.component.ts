@@ -12,4 +12,8 @@ export class TopNavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  checkToken():boolean{
+    return localStorage.getItem('token') != null;
+  }
+
 }
