@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Product, User } from '../model/model';
+import { Product, User, Damage } from '../model/model';
 import { Observable } from 'rxjs';
 
 const httpOptions = {
@@ -43,7 +43,31 @@ export class HttpService {
     return this.http.get<Array<Product>>(this.baseUrl + 'products/broken', { headers: httpOptions.headers });
   }
 
+  getOneProduct(productId: number): Observable<Product> {
+    return this.http.get<Product>(this.baseUrl + 'products/' + productId, { headers: httpOptions.headers });
+  }
+
   deleteProduct(productId: number) {
-    this.http.delete(this.baseUrl + 'products/' + productId.toString(), { headers: httpOptions.headers });
+    return this.http.delete<void>(this.baseUrl + 'products/' + productId, { headers: httpOptions.headers });
+  }
+
+  reportDamage(damage: Damage): Observable<Damage> {
+    return this.http.post<Damage>(this.baseUrl + 'reports/add', damage, { headers: httpOptions.headers });
+  }
+
+  reportFix(damageId: number): Observable<Damage> {
+    return this.http.post<Damage>(this.baseUrl + 'reports/fix/' + damageId, { headers: httpOptions.headers });
+  }
+
+  getAllReports(): Observable<Array<Damage>> {
+    return this.http.get<Array<Damage>>(this.baseUrl + 'reports', { headers: httpOptions.headers });
+  }
+
+  getAllSolvedReports(): Observable<Array<Damage>> {
+    return this.http.get<Array<Damage>>(this.baseUrl + 'reports/solved', { headers: httpOptions.headers });
+  }
+
+  getAllUnsolvedReports(): Observable<Array<Damage>> {
+    return this.http.get<Array<Damage>>(this.baseUrl + 'reports/unsolved', { headers: httpOptions.headers });
   }
 }
