@@ -1,0 +1,7 @@
+<body>
+    <h2>Lista wszystkich naprawionych awarii:</h2>
+    <li class="single-damage" *ngFor="let damage of damages | async">
+        <b class="damage-name">Id produktu: {{damage.productId}}</b>
+        <p><b>Komentarz:</b> {{damage.comment}} </p>
+    </li>
+</body>

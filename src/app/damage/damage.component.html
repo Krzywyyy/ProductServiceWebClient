@@ -1,0 +1,9 @@
+<body>
+    <h2>Lista wszystkich awarii:</h2>
+    <li class="single-damage" *ngFor="let damage of damages | async">
+        <b class="damage-name">Id produktu: {{damage.productId}}</b>
+        <p><b>Komentarz:</b> {{damage.comment}}</p>
+        <p class="solved" *ngIf="damage.solved === true">Awaria naprawiona</p>
+        <p class="unsolved" *ngIf="damage.solved === false">Awaria nienaprawiona</p>
+    </li>
+</body>

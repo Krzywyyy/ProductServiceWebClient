@@ -1,0 +1,14 @@
+<body>
+    <h2>Zgłoś naprawę awarii:</h2>
+    <form id="report-fix-form" (ngSubmit)="reportFix()" #reportDamageForm="ngForm">
+        <div class="form-group">
+            <label>Id naprawy:</label><br>
+            <select class="form-control" [(ngModel)]="damage.id" [ngModelOptions]="{standalone: true}" required>
+                <option *ngFor="let damage of damages | async" [value]="damage.id">
+                    {{damage.id}}
+                </option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Zgłoś</button>
+    </form>
+</body>
