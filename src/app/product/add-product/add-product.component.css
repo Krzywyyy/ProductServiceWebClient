@@ -1,3 +1,7 @@
 #add-product-form{
-    width: 30ch;
+    width: 50ch;
+}
+
+#add-param-btn{
+    width: max-content
 }

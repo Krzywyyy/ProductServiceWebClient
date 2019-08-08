@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product, ProductCategory } from 'src/app/model/model';
+import { Product, ProductCategory, Parameter } from 'src/app/model/model';
 import { HttpService } from 'src/app/service/http.service';
 import { Router } from '@angular/router';
 
@@ -26,10 +26,24 @@ export class AddProductComponent implements OnInit {
     ProductCategory.NOTEBOOK
   ]
 
+  parameter: Parameter = new Parameter();
+
+  parameters: Array<Parameter> = new Array<Parameter>();
+
   ngOnInit() {
   }
 
+  addParamToList(){
+    let param: Parameter = new Parameter();
+    param.name = this.parameter.name;
+    param.value = this.parameter.value;
+
+    this.parameters.push(param)
+  }
+
   addNewProduct(){
+    this.product.parameters = this.parameters;
+
     this.http.addProduct(this.product).subscribe(
       success => {
         this.router.navigate(['/products']);

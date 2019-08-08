@@ -21,8 +21,27 @@
         </div>
         <div class="form-group">
             <label for="parameters">Parametry</label>
-            <input type="text" class="form-control" id="parameters" name="parameters" [(ngModel)]="product.parameters"
-                #parameters="ngModel" placeholder="Podaj parametr" required>
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" [(ngModel)]="parameter.name" #parameter.name="ngModel"
+                            [ngModelOptions]="{standalone: true}" placeholder="Podaj nazwę">
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" [(ngModel)]="parameter.value" #parameter.value="ngModel"
+                            [ngModelOptions]="{standalone: true}" placeholder="Podaj wartość">
+                    </td>
+                    <td>
+                        <button type="button" id="add-param-btn" class="btn btn-primary"
+                            (click)="addParamToList()">Dodaj parametr</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="form-group">
+            <p *ngFor="let parameter of parameters">
+                {{parameter.name}}: {{parameter.value}}
+            </p>
         </div>
         <button type="submit" class="btn btn-primary">Dodaj</button>
     </form>
