@@ -1,0 +1,14 @@
+<body>
+    <h2>Zaloguj się</h2>
+    <form id="login-form" (ngSubmit)="signIn()" #loginForm="ngForm">
+      <div class="form-group">
+        <label for="login">Login</label>
+        <input type="text" class="form-control" id="login" name="login" [(ngModel)]="user.login" #login="ngModel" placeholder="Podaj login" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Hasło</label>
+        <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" #password="ngModel" placeholder="Podaj hasło" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Zaloguj</button>
+    </form>
+  </body> 
