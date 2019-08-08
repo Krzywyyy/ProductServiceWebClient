@@ -1,0 +1,12 @@
+.top-navbar-btn-group{
+    background-color: cornflowerblue
+}
+
+.btn{
+    border: 1px solid black;
+    width: max-content
+}
+
+.dropdown-menu{
+    width: 30ch;
+}

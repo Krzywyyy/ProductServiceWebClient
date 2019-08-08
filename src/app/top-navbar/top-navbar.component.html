@@ -1,0 +1,51 @@
+<nav>
+  <div class="navbar-for-auth-user">
+    <div class="top-navbar-btn-group auth-top-navbar">
+      <table>
+        <tr>
+          <td>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              Sprzęt
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a routerLink="/products">Wyświetl wszystkie sprzęty</a></li>
+              <li><a routerLink="/products/efficient">Wyświetl sprawne sprzęty</a></li>
+              <li><a routerLink="/products/broken">Wyświetl niesprawne sprzęty</a></li>
+              <li><a routerLink="/products/add">Dodaj sprzęt</a></li>
+              <li><a routerLink="/products/delete">Usuń sprzęt</a></li>
+            </ul>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+              Awarie
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#">Wyświetl wszystkie zgłoszenia</a></li>
+              <li><a href="#">Wyświetl aktywne zgłoszenia</a></li>
+              <li><a href="#">Wyświetl zgłoszenia</a></li>
+              <li><a href="#">Zgłoś awarię</a></li>
+              <li><a href="#">Zgłoś naprawę</a></li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="navbar-for-non-auth-user">
+    <div class="top-navbar-btn-group non-auth-top-navbar">
+      <table>
+        <tr>
+          <td>
+            <button type="button" class="btn btn-default" routerLink="/login">Zaloguj</button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-default" routerLink="/register">Zarejestruj</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</nav>
