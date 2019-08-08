@@ -20,6 +20,12 @@ export class DeleteProductComponent implements OnInit {
   }
 
   delete(){
-    this.http.deleteProduct(this.product.id);
+    this.http.deleteProduct(this.product.id).subscribe(success => {
+      console.log(success)
+    },
+    error => {
+      console.log(error);
+    }
+    )
   }
 }
