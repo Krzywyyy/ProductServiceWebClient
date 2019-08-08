@@ -57,7 +57,7 @@ export class HttpService {
 
   reportFix(damageId: number): Observable<Damage> {
     console.log(httpOptions.headers)
-    return this.http.post<Damage>(this.baseUrl + 'reports/fix/' + damageId,null, { headers: httpOptions.headers });
+    return this.http.post<Damage>(this.baseUrl + 'reports/fix/' + damageId, null, { headers: httpOptions.headers });
   }
 
   getAllReports(): Observable<Array<Damage>> {
