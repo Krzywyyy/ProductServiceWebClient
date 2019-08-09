@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    'Authorization': localStorage.getItem('token')
+    'Authorization': sessionStorage.getItem('token')
   })
 };
 

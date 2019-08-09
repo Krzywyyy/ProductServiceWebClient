@@ -1,7 +1,6 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../service/http.service';
 import { User } from '../model/model';
-import { TopNavbarComponent } from '../top-navbar/top-navbar.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,9 +10,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http: HttpService, private router:Router) { }
+  constructor(private http: HttpService, private router: Router) { }
 
-  user:User = new User();
+  user: User = new User();
 
   ngOnInit() {
   }
@@ -21,7 +20,7 @@ export class LoginComponent implements OnInit {
   signIn() {
     this.http.login(this.user).subscribe(
       resp => {
-        localStorage.setItem('token',resp.headers.get('Authorization'));
+        sessionStorage.setItem('token', resp.headers.get('Authorization'));
         this.router.navigate(['/products']);
       }
     )
