@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
 })
 export class AddProductComponent implements OnInit {
 
-  constructor(private http:HttpService, private router:Router) { }
+  constructor(private http: HttpService, private router: Router) { }
 
-  product:Product = new Product();
+  product: Product = new Product();
 
   categories: Array<ProductCategory> = [
     ProductCategory.FRIDGE,
@@ -33,7 +33,7 @@ export class AddProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  addParamToList(){
+  addParamToList() {
     let param: Parameter = new Parameter();
     param.name = this.parameter.name;
     param.value = this.parameter.value;
@@ -41,7 +41,7 @@ export class AddProductComponent implements OnInit {
     this.parameters.push(param)
   }
 
-  addNewProduct(){
+  addNewProduct() {
     this.product.parameters = this.parameters;
 
     this.http.addProduct(this.product).subscribe(
